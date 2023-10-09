@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Your stylesheet link here -->
+    <script defer src="app.js"></script> <!-- Your JS file link here -->
+</head>
+<body>
+    <header>
+        <h1>Weather App</h1>
+    </header>
+
+    <main>
+        <!-- Feature 1: Current Weather -->
+        <section id="current-weather">
+            <h2>Current Weather</h2>
+            <form id="current-weather-form">
+                <input type="text" id="current-weather-location" placeholder="Enter location">
+                <button type="submit">Get Weather</button>
+            </form>
+            <div id="current-weather-result"></div>
+        </section>
+
+        <!-- Feature 2: 5-day Forecast -->
+        <section id="five-day-forecast">
+            <h2>5-Day Forecast</h2>
+            <form id="five-day-form">
+                <input type="text" id="five-day-location" placeholder="Enter location">
+                <button type="submit">Get Forecast</button>
+            </form>
+            <div id="five-day-result"></div>
+        </section>
+
+        <!-- Feature 3: Activity Suggestions -->
+        <section id="activity-suggestions">
+            <h2>Activity Suggestions</h2>
+            <form id="activity-form">
+                <input type="text" id="activity-location" placeholder="Enter location">
+                <button type="submit">Get Suggestions</button>
+            </form>
+            <div id="activity-result"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created by Brett Long</p>
+    </footer>
+</body>
+</html>
