@@ -9,18 +9,34 @@ document.getElementById('current-form').addEventListener('submit', function(e) {
     });
 });
 
-// Feature 2: 5-Day Weather Forecast
-document.getElementById('five-day-form').addEventListener('submit', function(e) {
+// Feature 2: Temperature Compared to Sydney
+document.getElementById('compare-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    const location = document.getElementById('five-day-location').value;
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=24306fad6bfddec85c08fc31487d2c8a&units=metric`)
+    const location = document.getElementById('compare-location').value;
+
+    // Fetch the temperature for the user-specified location
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=24306fad6bfddec85c08fc31487d2c8a&units=metric`)
     .then(response => response.json())
     .then(data => {
-        let forecastText = '';
-        for (let i = 0; i < data.list.length; i+=8) {
-            forecastText += `Day ${i/8 + 1}: Temperature: ${data.list[i].main.temp}°C\n`;
-        }
-        document.getElementById('five-day-result').innerText = forecastText;
+        const tempUserLocation = data.main.temp;
+
+        // Fetch the temperature for Sydney
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=Sydney,au&appid=24306fad6bfddec85c08fc31487d2c8a&units=metric`)
+        .then(response => response.json())
+        .then(data => {
+            const tempSydney = data.main.temp;
+
+            let comparisonResult = '';
+            if (tempUserLocation > tempSydney) {
+                comparisonResult = 'warmer';
+            } else if (tempUserLocation < tempSydney) {
+                comparisonResult = 'cooler';
+            } else {
+                comparisonResult = 'the same temperature as';
+            }
+
+            document.getElementById('compare-result').innerText = `It's ${comparisonResult} than Sydney.`;
+        });
     });
 });
 
