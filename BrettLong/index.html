@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- 
+  File: index.html
+  Author: Brett Long
+  Description: This is the main HTML file for the Weather App, providing features like current weather, activity suggestions, and temperature comparisons with Sydney.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Title of the web page -->
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="wrapper"> <!-- Add this wrapper -->
+    <!-- Main heading -->
+    <h1>Weather App</h1>
+
+    <!-- Start of the Current Weather section -->
+    <section id="current-weather-section">
+        <h2>Current Weather (Select City)</h2>
+        <!-- Form to enter location for current weather -->
+        <form id="current-form">
+            <input type="text" id="current-location" placeholder="Virginia Beach">
+            <button type="submit">Get Weather</button>
+        </form>
+        <!-- Container for displaying current weather result -->
+        <div id="current-result"></div>
+    </section>
+    <!-- End of the Current Weather section -->
+
+    <!-- Start of the Activity Suggestions section -->
+    <section id="activity-suggestions-section">
+        <h2>Activity Suggestions by temperature (Outdoor / Indoor)</h2>
+        <!-- Form to enter location for activity suggestions -->
+        <form id="suggestions-form">
+            <input type="text" id="suggestions-location" placeholder="Virginia Beach">
+            <button type="submit">Get Suggestions</button>
+        </form>
+        <!-- Container for displaying activity suggestions -->
+        <div id="suggestions-result"></div>
+    </section>
+    <!-- End of the Activity Suggestions section -->
+
+    <!-- Start of the Compare to Sydney section -->
+    <section id="compare-to-sydney-section">
+        <h2>Compared to Sydney (Warmer / Cooler)</h2>
+        <!-- Form to enter location for comparing with Sydney -->
+        <form id="compare-form">
+            <input type="text" id="compare-location" placeholder="Virginia Beach">
+            <button type="submit">Compare</button>
+        </form>
+        <!-- Container for displaying comparison result -->
+        <div id="compare-result"></div>
+    </section>
+    <!-- End of the Compare to Sydney section -->
+
+    <!-- Footer section -->
+    <footer><br>Created by Brett Long</footer>
+        <!-- Link to the JavaScript file -->
+
+    <script src="app.js"></script>
+  </div> <!-- Close wrapper -->
+
+</body>
+</html>
